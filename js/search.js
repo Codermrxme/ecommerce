@@ -21,14 +21,14 @@ searchInput.addEventListener('input', function (e) {
     isExistpro ? searchCards.classList.remove('hidden') : searchCards.classList.add('hidden')
     searchProduct.length > 0 ? searchProduct.map((el) => {
         searchCards.innerHTML += `
-    <div class="border-[2px] border-[gray] rounded-[10px] p-[10px] flex items-center gap-[10px]">
+    <a href="#" class="border-[2px] border-[gray] rounded-[10px] p-[10px] flex items-center gap-[10px]">
         <img class="object-contain" width="100px" src="${el.images[0]}" alt="">
         <div>
             <h2 class="font-bold">${el.name}</h2>
             <p class="line-clamp-2">${el.description}</p>
         </div>
 
-    </div>
+    </a>
     `
     }) : searchCards.innerHTML = '<h1 class="text-[black]"> Нет такого продукта </h1>'
 

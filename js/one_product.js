@@ -42,7 +42,8 @@ singlePro.map((el) => {
                         </div>
                         <button
                             class="mb-[24px] mx-[auto] mt-[16px] w-full lg:w-[279px] flex items-center gap-[50px] py-[14px] bg-[#FF6633] px-[16px] rounded-[4px] text-[white] text-[24px]"><img
-                                src="./images/prd/shopping-cart.png" alt=""> В корзину</button>
+                                src="./images/prd/shopping-cart.png" alt=""> В корзину
+                        </button>
                         <table class="w-full border border-gray-200 rounded-lg overflow-hidden text-sm text-gray-700">
                             <tbody>
                                 <tr class="bg-gray-100 py-[8px]">

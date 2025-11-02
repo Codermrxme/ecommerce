@@ -1,363 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+  </head>
 
-<body>
-
-    <div id="loading" class="fixed z-6 top-0 w-full h-full bg-[white] flex items-center justify-center ">
-        <div class="flex flex-col items-center">
-            <img class="w-[90px]" src="./images/loading.svg" alt="">
-            <p>loading..</p>
-        </div>
-
+  <body>
+    <div
+      id="loading"
+      class="fixed z-6 top-0 w-full h-full bg-[white] flex items-center justify-center"
+    >
+      <div class="flex flex-col items-center">
+        <img class="w-[90px]" src="./images/loading.svg" alt="" />
+        <p>loading..</p>
+      </div>
     </div>
     <header class="py-[11px] fixed w-[100%] bg-[#FFFFFF] z-1">
-        <div class="container mx-[auto] px-[20px] flex items-center justify-between">
-            <div class="flex items-center gap-[20px] lg:gap-[40px]">
-                <div class="hidden xl:flex xl:items-center xl:gap-[11.41px]">
-                    <a href="./index.html"><img src="./images/header/logo.png" alt=""></a>
-                    <a href="./index.html"><img src="./images/header/Северяночка.png" alt=""></a>
-                </div>
-                <img class="xl:hidden" src="./images/header/logo.png" alt="">
-                <div class="flex items-center gap-[20px] lg:gap-[30px]">
-                    <div class="hidden md:block">
-                        <button
-                            class="pl-[8px] bg-[#70C05B] w-[40px] xl:w-[140px] h-[40px] rounded-[4px] flex items-center gap-[25px]"><img
-                                src="images/header/menu.png" alt="">
-                            <h3 class="hidden xl:block xl:text-white xl:text-[16px] xl:font-normal">Каталог</h3>
-                        </button>
-                    </div>
-
-                    <form action="">
-                        <div class="relative w-[270px] md:w-[325px] xl:w-[360px]">
-                            <input id="input"
-                                class="pl-[15px] w-[270px] md:w-[325px] xl:w-[360px] h-[40px] border-[1px] rounded-[4px] border-[#70C05B]"
-                                type="text" placeholder="Найти товар">
-                            <img class="absolute right-[10px] top-[7px] buttom-0" src="./images/header/search.png"
-                                alt="">
-                            <div id="search-cards"
-                                class="max-h-[400px] overflow-y-scroll top-10 shadow-lg top-[50px] absolute bg-[white] p-[20px] rounded-[10px] flex flex-col gap-[10px]">
-
-
-
-                            </div>
-                        </div>
-
-                    </form>
-
-                </div>
+      <div
+        class="container mx-[auto] px-[20px] flex items-center justify-between"
+      >
+        <div class="flex items-center gap-[20px] lg:gap-[40px]">
+          <div class="hidden xl:flex xl:items-center xl:gap-[11.41px]">
+            <a href="./index.html"
+              ><img src="./images/header/logo.png" alt=""
+            /></a>
+            <a href="./index.html"
+              ><img src="./images/header/Северяночка.png" alt=""
+            /></a>
+          </div>
+          <img class="xl:hidden" src="./images/header/logo.png" alt="" />
+          <div class="flex items-center gap-[20px] lg:gap-[30px]">
+            <div class="hidden md:block">
+              <button
+                class="pl-[8px] bg-[#70C05B] w-[40px] xl:w-[140px] h-[40px] rounded-[4px] flex items-center gap-[25px]"
+              >
+                <img src="images/header/menu.png" alt="" />
+                <h3
+                  class="hidden xl:block xl:text-white xl:text-[16px] xl:font-normal"
+                >
+                  Каталог
+                </h3>
+              </button>
             </div>
-            <div class="hidden md:flex md:items-center md:gap-[16px] lg:gap-[60px]">
-                <div class="flex items-center gap-[20px] xl:gap-[40px]">
-                    <div class="flex flex-col items-center gap-[8px]">
-                        <img src="./images/header/like.png" alt="">
-                        <p class="text-[12px]">Избранное</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-[8px]">
-                        <img src="./images/header/product.png" alt="">
-                        <p class="text-[12px]">продукты</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-[8px]">
-                        <img src="./images/header/korzina.png" alt="">
-                        <p class="text-[12px]">Корзина</p>
-                    </div>
-                </div>
-                <div class="hidden lg:flex lg:items-center lg:gap-[30px]">
-                    <div class="lg:flex lg:items-center lg:gap-[18px]">
-                        <img src="./images/header/avatar (3).png" alt="">
-                        <p class="hidden lg:block">Алексей</p>
-                    </div>
 
-                    <img class="hidden lg:block" src="./images/header/chevron-down.png" alt="">
-                </div>
-                <img class="lg:hidden" src="./images/header/avatar (3).png" alt="">
-            </div>
+            <form action="">
+              <div class="relative w-[270px] md:w-[325px] xl:w-[360px]">
+                <input
+                  id="input"
+                  class="pl-[15px] w-[270px] md:w-[325px] xl:w-[360px] h-[40px] border-[1px] rounded-[4px] border-[#70C05B]"
+                  type="text"
+                  placeholder="Найти товар"
+                />
+                <img
+                  class="absolute right-[10px] top-[7px] buttom-0"
+                  src="./images/header/search.png"
+                  alt=""
+                />
+                <div
+                  id="search-cards"
+                  class="max-h-[400px] overflow-y-scroll top-10 shadow-lg top-[50px] absolute bg-[white] p-[20px] rounded-[10px] flex flex-col gap-[10px]"
+                ></div>
+              </div>
+            </form>
+          </div>
         </div>
+        <div class="hidden md:flex md:items-center md:gap-[16px] lg:gap-[60px]">
+          <div class="flex items-center gap-[20px] xl:gap-[40px]">
+            <a href="#" class="flex flex-col items-center gap-[8px]">
+              <img src="./images/header/like.png" alt="" />
+              <p class="text-[12px]">Избранное</p>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-[8px]">
+              <img src="./images/header/product.png" alt="" />
+              <p class="text-[12px]">продукты</p>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-[8px]">
+              <div class="flex items-center gap-[5px] relative">
+                <img
+                  class="w-[25px]"
+                  src="./images/header/cart-shopping-solid-full (1).svg"
+                  alt=""
+                />
+                <span
+                  id="badge"
+                  class="w-[15px] h-[15px] rounded-[50%] bg-[black] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[0]"
+                  >0</span
+                >
+              </div>
+              <p class="text-[12px]">Корзина</p>
+            </a>
+          </div>
+          <div class="hidden lg:flex lg:items-center lg:gap-[30px]">
+            <a href="#" class="lg:flex lg:items-center lg:gap-[18px]">
+              <img src="./images/header/avatar (3).png" alt="" />
+              <p class="hidden lg:block">Алексей</p>
+            </a>
+
+            <img
+              class="hidden lg:block"
+              src="./images/header/chevron-down.png"
+              alt=""
+            />
+          </div>
+          <img class="lg:hidden" src="./images/header/avatar (3).png" alt="" />
+        </div>
+      </div>
     </header>
-    <div class="fixed bottom-0 w-[100%] bg-[#FFFFFF] md:hidden z-2 ">
-        <div class="container mx-[auto] flex items-center justify-between px-[20px]">
-            <div class="flex flex-col items-center gap-[8px]">
-                <img src="./images/header/catalog.png" alt="">
-                <p class="text-[12px]">Каталог</p>
-            </div>
-            <div class="flex flex-col items-center gap-[8px]">
-                <img src="./images/header/like.png" alt="">
-                <p class="text-[12px]">Избранное</p>
-            </div>
-            <div class="flex flex-col items-center gap-[8px]">
-                <img src="./images/header/product.png" alt="">
-                <p class="text-[12px]">продукты</p>
-            </div>
-            <div class="flex flex-col items-center gap-[8px]">
-                <img src="./images/header/korzina.png" alt="">
-                <p class="text-[12px]">Корзина</p>
-            </div>
-            <img src="./images/header/avatar (3).png" alt="">
-        </div>
+    <div class="fixed bottom-0 w-[100%] bg-[#FFFFFF] md:hidden z-2">
+      <div
+        class="container mx-[auto] flex items-center justify-between px-[20px]"
+      >
+        <a href="#" class="flex flex-col items-center gap-[8px]">
+          <img src="./images/header/catalog.png" alt="" />
+          <p class="text-[12px]">Каталог</p>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-[8px]">
+          <img src="./images/header/like.png" alt="" />
+          <p class="text-[12px]">Избранное</p>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-[8px]">
+          <img src="./images/header/product.png" alt="" />
+          <p class="text-[12px]">продукты</p>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-[8px]">
+          <div class="flex items-center gap-[5px] relative">
+            <img
+              class="w-[25px]"
+              src="./images/header/cart-shopping-solid-full (1).svg"
+              alt=""
+            />
+            <span
+              id="badge"
+              class="w-[15px] h-[15px] rounded-[50%] bg-[black] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[0]"
+              >0</span
+            >
+          </div>
+          <p class="text-[12px]">Корзина</p>
+        </a>
+        <img src="./images/header/avatar (3).png" alt="" />
+      </div>
     </div>
 
     <main>
-        <section id="hero"
-            class="pb-[26px] sm:pb-[0px] pt-[90px] bg-[url('./images/hero/bg.png')] bg-center bg-no-repeat bg-cover">
-            <div class="container mx-[auto] px-[20px] ">
-                <img class="hidden sm:block sm:mx-[auto]" src="./images/hero/content-1208x200.png" alt="">
-                <h1 class="text-center text-[18px] font-bold sm:hidden">Доставка бесплатно от 1000 ₽</h1>
+      <section
+        id="hero"
+        class="pb-[26px] sm:pb-[0px] pt-[90px] bg-[url('./images/hero/bg.png')] bg-center bg-no-repeat bg-cover"
+      >
+        <div class="container mx-[auto] px-[20px]">
+          <img
+            class="hidden sm:block sm:mx-[auto]"
+            src="./images/hero/content-1208x200.png"
+            alt=""
+          />
+          <h1 class="text-center text-[18px] font-bold sm:hidden">
+            Доставка бесплатно от 1000 ₽
+          </h1>
+        </div>
+      </section>
+
+      <section id="action" class="bg-[#FDFBF0] pt-[80px] pb-[120px]">
+        <div class="container mx-[auto] px-[20px]">
+          <div class="flex items-center justify-between">
+            <h1 class="text-[28px] md:text-[36px] font-bold">Акции</h1>
+            <div class="flex items-center gap-[8px]">
+              <a class="text-[13px] md:text-[16px]" href="./all_products.html"
+                >Все продукты</a
+              >
+              <a href=""
+                ><img src="./images/action/chevron-right.png" alt=""
+              /></a>
             </div>
-        </section>
+          </div>
+          <div
+            class="cards mt-[40px] grid grid-cols-2 gap-[8px] lg:grid lg:grid-cols-3 lg:gap-[30px] xl:grid xl:grid-cols-4 xl:gap-[30px]"
+          ></div>
+        </div>
+      </section>
 
-        <section id="action" class="bg-[#FDFBF0] pt-[80px] pb-[120px]">
-            <div class="container mx-[auto] px-[20px]">
-                <div class="flex items-center justify-between">
-                    <h1 class="text-[28px] md:text-[36px] font-bold">Акции</h1>
-                    <div class="flex items-center gap-[8px]">
-                        <a class="text-[13px] md:text-[16px]" href="./all_products.html">Все продукты</a>
-                        <a href=""><img src="./images/action/chevron-right.png" alt=""></a>
-                    </div>
-                </div>
-                <div
-                    class="cards mt-[40px] grid grid-cols-2 gap-[8px] lg:grid lg:grid-cols-3 lg:gap-[30px] xl:grid xl:grid-cols-4 xl:gap-[30px]">
-
-
-
-                </div>
+      <section id="action" class="bg-[#FDFBF0] pt-[80px] pb-[120px]">
+        <div class="container mx-[auto] px-[20px]">
+          <div class="flex items-center justify-between">
+            <h1 class="text-[28px] md:text-[36px] font-bold">Новинки</h1>
+            <div class="flex items-center gap-[8px]">
+              <a class="text-[13px] md:text-[16px]" href="./all_products.html"
+                >Все продукты</a
+              >
+              <a href=""
+                ><img src="./images/action/chevron-right.png" alt=""
+              /></a>
             </div>
-        </section>
+          </div>
+          <div
+            class="cards_2 mt-[40px] grid grid-cols-2 gap-[8px] lg:grid lg:grid-cols-3 lg:gap-[30px] xl:grid xl:grid-cols-4 xl:gap-[30px]"
+          ></div>
+        </div>
+      </section>
 
-        <section id="action" class="bg-[#FDFBF0] pt-[80px] pb-[120px]">
-            <div class="container mx-[auto] px-[20px]">
-                <div class="flex items-center justify-between">
-                    <h1 class="text-[28px] md:text-[36px] font-bold">Новинки</h1>
-                    <div class="flex items-center gap-[8px]">
-                        <a class="text-[13px] md:text-[16px]" href="./all_products.html">Все продукты</a>
-                        <a href=""><img src="./images/action/chevron-right.png" alt=""></a>
-                    </div>
-                </div>
-                <div
-                    class="cards_2 mt-[40px] grid grid-cols-2 gap-[8px] lg:grid lg:grid-cols-3 lg:gap-[30px] xl:grid xl:grid-cols-4 xl:gap-[30px]">
-
-                </div>
+      <section id="action" class="bg-[#FDFBF0] pt-[80px] pb-[120px]">
+        <div class="container mx-[auto] px-[20px]">
+          <div class="flex items-center justify-between">
+            <h1 class="text-[28px] md:text-[36px] font-bold">
+              Покупали раньше
+            </h1>
+            <div class="flex items-center gap-[8px]">
+              <a class="text-[13px] md:text-[16px]" href="./all_products.html"
+                >Все продукты</a
+              >
+              <a href=""
+                ><img src="./images/action/chevron-right.png" alt=""
+              /></a>
             </div>
-        </section>
+          </div>
+          <div
+            class="cards_3 mt-[40px] grid grid-cols-2 gap-[8px] lg:grid lg:grid-cols-3 lg:gap-[30px] xl:grid xl:grid-cols-4 xl:gap-[30px]"
+          ></div>
+        </div>
+      </section>
 
-        <section id="action" class="bg-[#FDFBF0] pt-[80px] pb-[120px]">
-            <div class="container mx-[auto] px-[20px]">
-                <div class="flex items-center justify-between">
-                    <h1 class="text-[28px] md:text-[36px] font-bold">Покупали раньше</h1>
-                    <div class="flex items-center gap-[8px]">
-                        <a class="text-[13px] md:text-[16px]" href="./all_products.html">Все продукты</a>
-                        <a href=""><img src="./images/action/chevron-right.png" alt=""></a>
-                    </div>
-                </div>
-                <div
-                    class="cards_3 mt-[40px] grid grid-cols-2 gap-[8px] lg:grid lg:grid-cols-3 lg:gap-[30px] xl:grid xl:grid-cols-4 xl:gap-[30px]">
-                </div>
+      <section id="special" class="pb-[100px] bg-[#FDFBF0]">
+        <div class="container mx-[auto] px-[20px]">
+          <h1 class="text-[28px] md:text-[36px] font-bold mb-[40px]">
+            Специальные предложения
+          </h1>
+          <div
+            class="flex flex-col items-center gap-[16px] md:grid md:grid-cols-2 md:gap-[90px]"
+          >
+            <div
+              class="p-[20px] w-full md:max-w-[1000px] h-[200px] bg-[#FCD5BA] rounded-[4px] overflow-hidden flex items-center justify-between"
+            >
+              <div>
+                <h2 class="text-[18px] font-bold mb-[6px]">
+                  Оформите карту «Северяночка»
+                </h2>
+                <p class="text-[12px]">
+                  И получайте бонусы при <br />
+                  покупке в магазинах и на сайте
+                </p>
+              </div>
+              <img src="./images/special/Карта лояльности-10 1.png" alt="" />
             </div>
-        </section>
+            <div
+              class="p-[20px] w-full md:max-w-[1000px] h-[200px] bg-[#E5FFDE] rounded-[4px] overflow-hidden flex items-center justify-between"
+            >
+              <div>
+                <h2 class="text-[18px] font-bold mb-[6px]">
+                  Покупайте акционные <br />
+                  товары
+                </h2>
+                <p class="text-[12px]">
+                  И получайте вдвое <br />
+                  больше бонусов
+                </p>
+              </div>
+              <img src="./images/special/73 1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="special" class="pb-[100px] bg-[#FDFBF0]">
-            <div class="container mx-[auto] px-[20px]">
-                <h1 class="text-[28px] md:text-[36px] font-bold mb-[40px]">Специальные предложения</h1>
-                <div class="flex flex-col items-center gap-[16px] md:grid md:grid-cols-2 md:gap-[90px]">
-                    <div
-                        class="p-[20px] w-full md:max-w-[1000px] h-[200px] bg-[#FCD5BA] rounded-[4px] overflow-hidden flex items-center justify-between">
-                        <div>
-                            <h2 class="text-[18px] font-bold mb-[6px]">Оформите карту «Северяночка»</h2>
-                            <p class="text-[12px]">И получайте бонусы при <br> покупке в магазинах и на сайте</p>
-                        </div>
-                        <img src="./images/special/Карта лояльности-10 1.png" alt="">
-                    </div>
-                    <div
-                        class="p-[20px] w-full md:max-w-[1000px] h-[200px] bg-[#E5FFDE] rounded-[4px] overflow-hidden flex items-center justify-between">
-                        <div>
-                            <h2 class="text-[18px] font-bold mb-[6px]">Покупайте акционные <br> товары</h2>
-                            <p class="text-[12px]">И получайте вдвое <br> больше бонусов</p>
-                        </div>
-                        <img src="./images/special/73 1.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section id="magazines" class="bg-[#FDFBF0] pb-[120px]">
+        <div class="container mx-[auto] px-[20px]">
+          <h1 class="text-[28px] md:text-[36px] font-bold mb-[40px]">
+            Наши магазины
+          </h1>
+          <div
+            class="grid grid-cols-3 gap-[24px] sm:flex sm:items-center sm:gap-[24px] mb-[24px]"
+          >
+            <button
+              class="w-[97px] h-[32px] py-[4px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300"
+            >
+              п.Щельяюр
+            </button>
+            <button
+              class="w-[86px] h-[32px] py-[4px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300"
+            >
+              д.Вертеп
+            </button>
+            <button
+              class="w-[104px] h-[32px] py-[4px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300"
+            >
+              с.Краснобор
+            </button>
+            <button
+              class="w-[80px] h-[32px] py-[4px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300"
+            >
+              д.Диюр
+            </button>
+          </div>
+          <img class="w-full" src="./images/magaz/image 12 (1).png" alt="" />
+        </div>
+      </section>
 
-        <section id="magazines" class="bg-[#FDFBF0] pb-[120px]">
-            <div class="container mx-[auto] px-[20px]">
-                <h1 class="text-[28px] md:text-[36px] font-bold mb-[40px]">Наши магазины</h1>
-                <div class="grid grid-cols-3 gap-[24px] sm:flex sm:items-center sm:gap-[24px] mb-[24px]">
-                    <button
-                        class="w-[97px] h-[32px] py-[4px]  bg-[#F3F2F1]  rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300">п.Щельяюр</button>
-                    <button
-                        class="w-[86px] h-[32px] py-[4px]  bg-[#F3F2F1]  rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300">
-                        д.Вертеп</button>
-                    <button
-                        class="w-[104px] h-[32px] py-[4px]  bg-[#F3F2F1]  rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300">
-                        с.Краснобор</button>
-                    <button
-                        class="w-[80px] h-[32px] py-[4px]  bg-[#F3F2F1]  rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300">
-                        д.Диюр</button>
-                </div>
-                <img class="w-full" src="./images/magaz/image 12 (1).png" alt="">
+      <section id="states" class="bg-[#FDFBF0] pb-[80px]">
+        <div class="container mx-[auto] px-[20px]">
+          <div class="flex items-center justify-between mb-[40px]">
+            <h1 class="text-[28px] md:text-[36px] font-bold">Статьи</h1>
+            <div class="flex items-center gap-[8px]">
+              <a class="text-[13px] md:text-[16px]" href=""> Все статьи</a>
+              <a href=""
+                ><img src="./images/action/chevron-right.png" alt=""
+              /></a>
             </div>
-        </section>
-
-        <section id="states" class="bg-[#FDFBF0] pb-[80px]">
-            <div class="container mx-[auto] px-[20px]">
-                <div class="flex items-center justify-between mb-[40px]">
-                    <h1 class="text-[28px] md:text-[36px] font-bold">Статьи</h1>
-                    <div class="flex items-center gap-[8px]">
-                        <a class="text-[13px] md:text-[16px]" href=""> Все статьи</a>
-                        <a href=""><img src="./images/action/chevron-right.png" alt=""></a>
-                    </div>
-                </div>
-                <div class=" flex-col items-center flex md:flex-row items-center gap-[40px]">
-                    <div class="max-w-[500px] w-full rounded-[4px] overflow-hidden hover:shadow-2xl duration-300">
-                        <img class="w-full" src="./images/states/1.png" alt="">
-                        <div class=" p-[10px] bg-[white]">
-                            <p class="text-[#8F8F8F] mb-[10px]">05.03.2021</p>
-                            <h3 class="text-[16px] xl:text-[18px] font-bold mb-[10px]">Режим использования масок и
-                                перчаток на территории магазинов</h3>
-                            <p class="text-[12px] xl:text-[16px] text-[#414141] mb-[10px]">Подробная информация о
-                                режимах использования масок и перчаток на территории магазинов
-                                "ЛЕНТА". Информация обновляется каждый будний день.</p>
-                            <button
-                                class="w-[150px] text-[13px] sm:text-[16px]  py-[4px] sm:py-[8px] rounded-[4px] text-[#70C05B] bg-[#E5FFDE] hover:bg-[#70C05B] hover:text-[white] duration-300">
-                                Подробнее</button>
-                        </div>
-                    </div>
-                    <div class="max-w-[500px] w-full rounded-[4px] overflow-hidden hover:shadow-2xl duration-300">
-                        <img class="w-full" src="./images/states/2.png" alt="">
-                        <div class=" p-[10px] bg-[white]">
-                            <p class="text-[#8F8F8F] mb-[10px]">05.03.2021</p>
-                            <h3 class="text-[16px] xl:text-[18px] font-bold mb-[10px]">Весеннее настроение для каждой
-                            </h3>
-                            <p class="text-[12px] xl:text-[16px] text-[#414141] mb-[33px]">8 Марта – это не просто
-                                Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных
-                                тёплых пожеланий.</p>
-                            <button
-                                class="w-[150px] text-[13px] sm:text-[16px]  py-[4px] sm:py-[8px] rounded-[4px] text-[#70C05B] bg-[#E5FFDE] hover:bg-[#70C05B] hover:text-[white] duration-300">
-                                Подробнее</button>
-                        </div>
-                    </div>
-                    <div class="max-w-[500px] w-full rounded-[4px] overflow-hidden hover:shadow-2xl duration-300">
-                        <img class="w-full" src="./images/states/3.png" alt="">
-                        <div class=" p-[10px] bg-[white]">
-                            <p class="text-[#8F8F8F] mb-[10px]">05.03.2021</p>
-                            <h3 class="text-[16px] xl:text-[18px] font-bold mb-[10px]">ЗОЖ или ФАСТФУД. А вы на чьей
-                                стороне? Голосуем!</h3>
-                            <p class="text-[12px] xl:text-[16px] text-[#414141] mb-[10px]">Голосуйте за любимые
-                                категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10%
-                                баллами в апреле!</p>
-                            <button
-                                class="w-[150px] text-[13px] sm:text-[16px]  py-[4px] sm:py-[8px] rounded-[4px] text-[#70C05B] bg-[#E5FFDE] hover:bg-[#70C05B] hover:text-[white] duration-300">
-                                Подробнее</button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div
+            class="flex-col items-center flex md:flex-row items-center gap-[40px]"
+          >
+            <div
+              class="max-w-[500px] w-full rounded-[4px] overflow-hidden hover:shadow-2xl duration-300"
+            >
+              <img class="w-full" src="./images/states/1.png" alt="" />
+              <div class="p-[10px] bg-[white]">
+                <p class="text-[#8F8F8F] mb-[10px]">05.03.2021</p>
+                <h3 class="text-[16px] xl:text-[18px] font-bold mb-[10px]">
+                  Режим использования масок и перчаток на территории магазинов
+                </h3>
+                <p class="text-[12px] xl:text-[16px] text-[#414141] mb-[10px]">
+                  Подробная информация о режимах использования масок и перчаток
+                  на территории магазинов "ЛЕНТА". Информация обновляется каждый
+                  будний день.
+                </p>
+                <button
+                  class="w-[150px] text-[13px] sm:text-[16px] py-[4px] sm:py-[8px] rounded-[4px] text-[#70C05B] bg-[#E5FFDE] hover:bg-[#70C05B] hover:text-[white] duration-300"
+                >
+                  Подробнее
+                </button>
+              </div>
             </div>
-        </section>
+            <div
+              class="max-w-[500px] w-full rounded-[4px] overflow-hidden hover:shadow-2xl duration-300"
+            >
+              <img class="w-full" src="./images/states/2.png" alt="" />
+              <div class="p-[10px] bg-[white]">
+                <p class="text-[#8F8F8F] mb-[10px]">05.03.2021</p>
+                <h3 class="text-[16px] xl:text-[18px] font-bold mb-[10px]">
+                  Весеннее настроение для каждой
+                </h3>
+                <p class="text-[12px] xl:text-[16px] text-[#414141] mb-[33px]">
+                  8 Марта – это не просто Международный женский день, это ещё
+                  день тюльпанов, приятных сюрпризов и праздничных тёплых
+                  пожеланий.
+                </p>
+                <button
+                  class="w-[150px] text-[13px] sm:text-[16px] py-[4px] sm:py-[8px] rounded-[4px] text-[#70C05B] bg-[#E5FFDE] hover:bg-[#70C05B] hover:text-[white] duration-300"
+                >
+                  Подробнее
+                </button>
+              </div>
+            </div>
+            <div
+              class="max-w-[500px] w-full rounded-[4px] overflow-hidden hover:shadow-2xl duration-300"
+            >
+              <img class="w-full" src="./images/states/3.png" alt="" />
+              <div class="p-[10px] bg-[white]">
+                <p class="text-[#8F8F8F] mb-[10px]">05.03.2021</p>
+                <h3 class="text-[16px] xl:text-[18px] font-bold mb-[10px]">
+                  ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!
+                </h3>
+                <p class="text-[12px] xl:text-[16px] text-[#414141] mb-[10px]">
+                  Голосуйте за любимые категории, выбирайте категорию-победителя
+                  в мобильном приложении и получайте кешбэк 10% баллами в
+                  апреле!
+                </p>
+                <button
+                  class="w-[150px] text-[13px] sm:text-[16px] py-[4px] sm:py-[8px] rounded-[4px] text-[#70C05B] bg-[#E5FFDE] hover:bg-[#70C05B] hover:text-[white] duration-300"
+                >
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer
-        class="pb-[90px] md:pb-[24px] bg-[#F9F4E2] bg-[url('./images/footer/bg.png')] bg-center bg-no-repeat bg-cover py-[24px]">
-        <div class="hidden md:block md:container md:mx-[auto] md:px-[20px] md:flex md:items-center md:justify-between">
-            <div class="flex items-center gap-[40px]">
-                <img src="./images/footer/logo (1).png" alt="">
-                <ul class="flex flex-wrap gap-[16px]">
-                    <li>
-                        <a class="text-[12px]" href="">О компании</a>
-                    </li>
-                    <li>
-                        <a class="text-[12px]" href="">Контакты</a>
-                    </li>
-                    <li>
-                        <a class="text-[12px]" href="">Вакансии</a>
-                    </li>
-                    <li>
-                        <a class="text-[12px]" href="">Статьи</a>
-                    </li>
-                    <li>
-                        <a class="text-[12px]" href="">Политика обработки персональных данных</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="md:relative flex items-center gap-[24px] xl:gap-[40px] max-w-[1000px]">
-                <ul
-                    class="md:absolute md:left-[-70px] xl:static grid grid-cols-2 gap-[8px] xl:flex xl:items-center xl:gap-[16px]">
-                    <li>
-                        <a class="h-5 w-5" href=""><img src="./images/footer/instagram.png" alt="" class="h-5 w-5"></a>
-                    </li>
-                    <li>
-                        <a class="h-5 w-5" href=""><img src="./images/footer/vkontakte.png" alt="" class="h-5 w-5"></a>
-                    </li>
-                    <li>
-                        <a class="h-5 w-5" href=""><img src="./images/footer/facebook.png" a lt="" class="h-5 w-5"></a>
-                    </li>
-                    <li>
-                        <a class="h-5 w-5" href=""><img src="./images/footer/ok.png" alt="" class="h-5 w-5"> </a>
-                    </li>
-                </ul>
-                <div class=" flex items-center gap-[8px] max-w-[400px]">
-                    <a class="h-[20px] w-[20px]" href=""><img src="./images/footer/phone.png" alt=""></a>
-                    <a class="text-[16px] whitespace-nowrap" href="">8 800 777 33 33</a>
-                </div>
-            </div>
+      class="pb-[90px] md:pb-[24px] bg-[#F9F4E2] bg-[url('./images/footer/bg.png')] bg-center bg-no-repeat bg-cover py-[24px]"
+    >
+      <div
+        class="hidden md:block md:container md:mx-[auto] md:px-[20px] md:flex md:items-center md:justify-between"
+      >
+        <div class="flex items-center gap-[40px]">
+          <img src="./images/footer/logo (1).png" alt="" />
+          <ul class="flex flex-wrap gap-[16px]">
+            <li>
+              <a class="text-[12px]" href="">О компании</a>
+            </li>
+            <li>
+              <a class="text-[12px]" href="">Контакты</a>
+            </li>
+            <li>
+              <a class="text-[12px]" href="">Вакансии</a>
+            </li>
+            <li>
+              <a class="text-[12px]" href="">Статьи</a>
+            </li>
+            <li>
+              <a class="text-[12px]" href=""
+                >Политика обработки персональных данных</a
+              >
+            </li>
+          </ul>
         </div>
-        <div class="container mx-[autu] px-[20px] md:hidden">
-            <div class="flex items-center justify-between">
-                <img src="./images/footer/logo (1).png" alt="">
+        <div
+          class="md:relative flex items-center gap-[24px] xl:gap-[40px] max-w-[1000px]"
+        >
+          <ul
+            class="md:absolute md:left-[-70px] xl:static grid grid-cols-2 gap-[8px] xl:flex xl:items-center xl:gap-[16px]"
+          >
+            <li>
+              <a class="h-5 w-5" href=""
+                ><img
+                  src="./images/footer/instagram.png"
+                  alt=""
+                  class="h-5 w-5"
+              /></a>
+            </li>
+            <li>
+              <a class="h-5 w-5" href=""
+                ><img
+                  src="./images/footer/vkontakte.png"
+                  alt=""
+                  class="h-5 w-5"
+              /></a>
+            </li>
+            <li>
+              <a class="h-5 w-5" href=""
+                ><img
+                  src="./images/footer/facebook.png"
+                  a
+                  lt=""
+                  class="h-5 w-5"
+              /></a>
+            </li>
+            <li>
+              <a class="h-5 w-5" href=""
+                ><img src="./images/footer/ok.png" alt="" class="h-5 w-5" />
+              </a>
+            </li>
+          </ul>
+          <div class="flex items-center gap-[8px] max-w-[400px]">
+            <a class="h-[20px] w-[20px]" href=""
+              ><img src="./images/footer/phone.png" alt=""
+            /></a>
+            <a class="text-[16px] whitespace-nowrap" href="">8 800 777 33 33</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-[autu] px-[20px] md:hidden">
+        <div class="flex items-center justify-between">
+          <img src="./images/footer/logo (1).png" alt="" />
 
-                <div class="flex flex-col items-center gap-[16px]">
-                    <ul class="flex items-center gap-[16px]">
-                        <li>
-                            <a class="h-5 w-5" href=""><img src="./images/footer/instagram.png" alt=""
-                                    class="h-5 w-5"></a>
-                        </li>
-                        <li>
-                            <a class="h-5 w-5" href=""><img src="./images/footer/vkontakte.png" alt=""
-                                    class="h-5 w-5"></a>
-                        </li>
-                        <li>
-                            <a class="h-5 w-5" href=""><img src="./images/footer/facebook.png" a lt=""
-                                    class="h-5 w-5"></a>
-                        </li>
-                        <li>
-                            <a class="h-5 w-5" href=""><img src="./images/footer/ok.png" alt="" class="h-5 w-5">
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="flex items-center gap-[8px]">
-                        <a class="h-[20px] w-[20px]" href=""><img src="./images/footer/phone.png" alt=""></a>
-                        <a class="text-[16px] whitespace-nowrap" href="">8 800 777 33 33</a>
-                    </div>
-                </div>
-
-            </div>
-            <ul class="flex flex-wrap gap-[16px] mt-[24px]">
-                <li>
-                    <a class="text-[12px]" href="">О компании</a>
-                </li>
-                <li>
-                    <a class="text-[12px]" href="">Контакты</a>
-                </li>
-                <li>
-                    <a class="text-[12px]" href="">Вакансии</a>
-                </li>
-                <li>
-                    <a class="text-[12px]" href="">Статьи</a>
-                </li>
-                <li>
-                    <a class="text-[12px]" href="">Политика обработки персональных данных</a>
-                </li>
+          <div class="flex flex-col items-center gap-[16px]">
+            <ul class="flex items-center gap-[16px]">
+              <li>
+                <a class="h-5 w-5" href=""
+                  ><img
+                    src="./images/footer/instagram.png"
+                    alt=""
+                    class="h-5 w-5"
+                /></a>
+              </li>
+              <li>
+                <a class="h-5 w-5" href=""
+                  ><img
+                    src="./images/footer/vkontakte.png"
+                    alt=""
+                    class="h-5 w-5"
+                /></a>
+              </li>
+              <li>
+                <a class="h-5 w-5" href=""
+                  ><img
+                    src="./images/footer/facebook.png"
+                    a
+                    lt=""
+                    class="h-5 w-5"
+                /></a>
+              </li>
+              <li>
+                <a class="h-5 w-5" href=""
+                  ><img src="./images/footer/ok.png" alt="" class="h-5 w-5" />
+                </a>
+              </li>
             </ul>
+            <div class="flex items-center gap-[8px]">
+              <a class="h-[20px] w-[20px]" href=""
+                ><img src="./images/footer/phone.png" alt=""
+              /></a>
+              <a class="text-[16px] whitespace-nowrap" href=""
+                >8 800 777 33 33</a
+              >
+            </div>
+          </div>
         </div>
+        <ul class="flex flex-wrap gap-[16px] mt-[24px]">
+          <li>
+            <a class="text-[12px]" href="">О компании</a>
+          </li>
+          <li>
+            <a class="text-[12px]" href="">Контакты</a>
+          </li>
+          <li>
+            <a class="text-[12px]" href="">Вакансии</a>
+          </li>
+          <li>
+            <a class="text-[12px]" href="">Статьи</a>
+          </li>
+          <li>
+            <a class="text-[12px]" href=""
+              >Политика обработки персональных данных</a
+            >
+          </li>
+        </ul>
+      </div>
     </footer>
     <script src="./js/products-data.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/main.js"></script>
-</body>
-
+  </body>
 </html>
