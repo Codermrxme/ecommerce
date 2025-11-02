@@ -1,3 +1,9 @@
+let loading = document.getElementById("loading");
+
+window.addEventListener("load", function () {
+  loading.classList.add("hidden");
+});
+
 let cards = document.querySelector(".cards");
 
 let carts = JSON.parse(localStorage.getItem("carts")) || [];
