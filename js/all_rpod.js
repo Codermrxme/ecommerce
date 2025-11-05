@@ -1,4 +1,4 @@
-let loading = document.getElementById("loading");
+// let loading = document.getElementById("loading");
 
 window.addEventListener("load", function () {
   loading.classList.add("hidden");
@@ -28,13 +28,13 @@ function renderAllProducts(products) {
                       ${el.discount}%</p>
               </div>
               <div class="flex items-center justify-between my-[8px]">
-                  <h3 class="text-[16px] sm:text-[18px] font-bold">${
-                    el.price
-                  }$</h3>
-                  <h3 class="text-[16px] sm:text-[18px] text-[#606060] line-through">${
-                    el.price - (el.price * el.discount) / 100
-                  }$</h3>
-              </div>
+            <h3 class="text-[16px]  text-[#606060] sm:text-[18px] line-through">${
+              el.price
+            }$</h3>
+            <h3 class="text-[16px] sm:text-[18px] font-bold">
+              ${el.price - (el.price * el.discount) / 100}$
+            </h3>
+          </div>
               <p class="text-[12px] sm:text-[16px] h-[53px] sm:h-[56px] overflow-hidden text-ellipsis line-clamp-[2]">${
                 el.description
               }</p>
@@ -43,26 +43,25 @@ function renderAllProducts(products) {
                   ${
                     carts.find((cart) => cart.id === el.id)
                       ? `
-                  <div class="grid grid-cols-3 ">
-                      <button
-                      onClick="deCrease(${el.id})"
-                      class="w-full p-[10px] bg-[green] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer">-</button>
-                      <span class="w-full p-[10px] bg-[white] text-black text-[18px] font-bold flex items-center justify-center">
-                      ${carts.find((cart) => cart.id === el.id).numbers}
-                    </span>
-                      <button
-                      onClick="inCrease(${el.id})"
-                      class="w-full p-[10px] bg-[green] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer">+</button>
-                  </div>
-                  `
-                      : `
+                <div class="grid grid-cols-3 ">
                   <button
-                      id="badge"
-                      onClick="addToCart(${el.id})"
-                      class="w-full text-[13px] sm:text-[16px]  py-[4px] sm:py-[8px] border-[1px] border-[#70C05B] rounded-[4px] text-[#70C05B] hover:bg-[#FF6633] hover:text-[white] hover:border-[#FF6633] duration-300">
-                      В корзину
-                  </button>
-                  `
+                  onClick="deCrease(${el.id})"
+                  class="w-full p-[7px] bg-[#ec6868ff] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer hover:bg-[#891b1bff] duration-1000 rounded-[5px]">-</button>
+                  <span class="w-full bg-[white] text-black text-[18px] font-bold flex items-center justify-center">
+                  ${carts.find((cart) => cart.id === el.id).numbers}
+                  </span>
+                  <button
+                    onClick="inCrease(${el.id})"
+                    class="w-full bg-[#48ee48ff] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer hover:bg-[#0c930cff] duration-1000 rounded-[5px]">+</button>
+                </div>
+              `
+                      : `
+                <button
+                  onClick="addToCart(${el.id})"
+                  class="w-full text-[13px] sm:text-[16px] py-[4px] sm:py-[8px] border-[1px] border-[#70C05B] rounded-[4px] text-[#70C05B] hover:bg-[#FF6633] hover:text-[white] hover:border-[#FF6633] duration-300 cursor-pointer">
+                  В корзину
+                </button>
+              `
                   }
               </div>
           </div>

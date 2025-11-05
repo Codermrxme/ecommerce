@@ -7,15 +7,20 @@ badge.forEach((el) => {
   el.textContent = carts.length;
 });
 
-function renderProducts(containerSelector, productArray, ratingClass) {
-  let container = document.querySelector(containerSelector);
-  container.innerHTML = ""; //
+function renderProducts(containerSelector, productArray) {
+  let container =
+    typeof containerSelector === "string"
+      ? document.querySelector(containerSelector)
+      : containerSelector;
 
+  if (!container) return;
+  container.innerHTML = "";
   productArray.map((el) => {
     container.innerHTML += `
-      <div class="hover:shadow-2xl duration-500">
+      <div class="hover:shadow-2xl duration-500 z-0">
         <div class="p-[20px] max-w-[500px] bg-[#FFFFFF] rounded-[10px] overflow-hidden">
           <div class="relative w-full h-[200px]">
+            <img id="likeBtn" class="absolute top-[10px] right-[10px] w-[30px] h-[30px] z-10 cursor-pointer shadow-lg" src="./images/like/heart.svg" alt="">
             <img class="w-full h-full object-cover" src="${
               el.images[0]
             }" alt="">
@@ -24,34 +29,36 @@ function renderProducts(containerSelector, productArray, ratingClass) {
             </p>
           </div>
           <div class="flex items-center justify-between my-[8px]">
-            <h3 class="text-[16px] sm:text-[18px] font-bold">${el.price}$</h3>
-            <h3 class="text-[16px] sm:text-[18px] text-[#606060] line-through">
+            <h3 class="text-[16px]  text-[#606060] sm:text-[18px] line-through">${
+              el.price
+            }$</h3>
+            <h3 class="text-[16px] sm:text-[18px] font-bold">
               ${el.price - (el.price * el.discount) / 100}$
             </h3>
           </div>
-          <p class="text-[12px] sm:text-[16px] h-[53px] sm:h-[56px] overflow-hidden text-ellipsis">${
-            el.description
-          }</p>
-          <div class="${ratingClass} flex items-center gap-[4px] my-[8px]"></div>
+          <p class="text-[12px] sm:text-[16px] h-[53px] sm:h-[56px] overflow-hidden text-ellipsis">
+            ${el.description}
+          </p>
+          <div class="flex items-center gap-[4px] my-[8px]">
+            ${renderStars(el.rating)}
+          </div>
           ${
             carts.find((cart) => cart.id === el.id)
               ? `
-                <div class="grid grid-cols-3 ">
-                  <button
-                  onClick="deCrease(${el.id})"
-                  class="w-full p-[10px] bg-[green] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer">-</button>
-                  <span class="w-full p-[10px] bg-[white] text-black text-[18px] font-bold flex items-center justify-center">
-                  ${carts.find((cart) => cart.id === el.id).numbers}
+                <div class="grid grid-cols-3">
+                  <button onClick="deCrease(${
+                    el.id
+                  })" class="w-full p-[7px] bg-[#ec6868ff] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer hover:bg-[#891b1bff] duration-1000 rounded-[5px]">-</button>
+                  <span class="w-full bg-[white] text-black text-[18px] font-bold flex items-center justify-center">
+                    ${carts.find((cart) => cart.id === el.id).numbers}
                   </span>
-                  <button
-                    onClick="inCrease(${el.id})"
-                    class="w-full p-[10px] bg-[green] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer">+</button>
+                  <button onClick="inCrease(${
+                    el.id
+                  })" class="w-full bg-[#48ee48ff] text-white text-[18px] font-bold flex items-center justify-center cursor-pointer hover:bg-[#0c930cff] duration-1000 rounded-[5px]">+</button>
                 </div>
               `
               : `
-                <button
-                  onClick="addToCart(${el.id})"
-                  class="w-full text-[13px] sm:text-[16px] py-[4px] sm:py-[8px] border-[1px] border-[#70C05B] rounded-[4px] text-[#70C05B] hover:bg-[#FF6633] hover:text-[white] hover:border-[#FF6633] duration-300">
+                <button onClick="addToCart(${el.id})" class="w-full text-[13px] sm:text-[16px] py-[4px] sm:py-[8px] border-[1px] border-[#70C05B] rounded-[4px] text-[#70C05B] hover:bg-[#FF6633] hover:text-[white] hover:border-[#FF6633] duration-300 cursor-pointer">
                   В корзину
                 </button>
               `
@@ -59,91 +66,61 @@ function renderProducts(containerSelector, productArray, ratingClass) {
         </div>
       </div>`;
   });
-
-  let ratingElements = document.getElementsByClassName(ratingClass);
-  let index = 0;
-  productArray.map((el) => {
-    let check = "";
-    for (let j = 1; j <= el.rating; j += 0.5) {
-      if (Number.isInteger(j)) {
-        check +=
-          '<img class="w-[13px] sm:w-[16px]" src="./images/general/star-solid-full.svg" alt="">';
-      }
-      if (j == el.rating && !Number.isInteger(j)) {
-        check +=
-          '<img class="w-[13px] sm:w-[16px]" src="./images/general/star-half-solid-full.svg" alt="">';
-      }
-    }
-    ratingElements[index].innerHTML += check;
-    index++;
-  });
 }
 
-let filt = products.filter((el) => el.discount > 0);
-let slicepr = filt.slice(filt.length - 4, filt.length);
-renderProducts(".cards", slicepr, "stars");
+function renderStars(rating) {
+  let starsHTML = "";
+  for (let j = 1; j <= rating; j += 0.5) {
+    if (Number.isInteger(j)) {
+      starsHTML += `<img class="w-[13px] sm:w-[16px]" src="./images/general/star-solid-full.svg" alt="">`;
+    } else if (j == rating && !Number.isInteger(j)) {
+      starsHTML += `<img class="w-[13px] sm:w-[16px]" src="./images/general/star-half-solid-full.svg" alt="">`;
+    }
+  }
+  return starsHTML;
+}
 
-let lmn = products.slice(0, 4);
-renderProducts(".cards_2", lmn, "rating");
-
-let lmn2 = products.slice(products.length - 4, products.length);
-renderProducts(".cards_3", lmn2, "rating_2");
+function showProducts() {
+  let discountProducts = products.filter((el) => el.discount > 0).slice(-4);
+  renderProducts(".cards", discountProducts);
+  let popularProducts = [...products]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 4);
+  renderProducts(".cards_2", popularProducts);
+  let newProducts = products.slice(-4);
+  renderProducts(".cards_3", newProducts);
+}
 
 function addToCart(id) {
   let item = products.find((el) => el.id === id);
   item.numbers = 1;
   carts.push(item);
   localStorage.setItem("carts", JSON.stringify(carts));
-  badge.forEach((el) => {
-    el.textContent = carts.length;
-  });
-
-  let filt = products.filter((el) => el.discount > 0);
-  let slicepr = filt.slice(filt.length - 4, filt.length);
-  renderProducts(".cards", slicepr, "stars");
-
-  let lmn = products.slice(0, 4);
-  renderProducts(".cards_2", lmn, "rating");
-
-  let lmn2 = products.slice(products.length - 4, products.length);
-  renderProducts(".cards_3", lmn2, "rating_2");
+  badge.forEach((el) => (el.textContent = carts.length));
+  showProducts();
 }
 
 function inCrease(id) {
   carts = carts.map((el) => {
-    if (el.id === id) {
-      el.numbers += 1;
-    }
+    if (el.id === id) el.numbers += 1;
     return el;
   });
   localStorage.setItem("carts", JSON.stringify(carts));
-  let filt = products.filter((el) => el.discount > 0);
-  let slicepr = filt.slice(filt.length - 4, filt.length);
-  renderProducts(".cards", slicepr, "stars");
-  let lmn = products.slice(0, 4);
+  showProducts();
 }
 
 function deCrease(id) {
   let item = carts.find((el) => el.id === id);
   carts = carts.map((el) => {
-    if (el.id === id) {
-      el.numbers -= 1;
-    }
+    if (el.id === id) el.numbers -= 1;
     return el;
   });
-  if (item.numbers === 0) {
+  if (item.numbers <= 0) {
     carts = carts.filter((el) => el.numbers > 0);
   }
-  badge.forEach((el) => {
-    el.textContent = carts.length;
-  });
-
+  badge.forEach((el) => (el.textContent = carts.length));
   localStorage.setItem("carts", JSON.stringify(carts));
-  let filt = products.filter((el) => el.discount > 0);
-  let slicepr = filt.slice(filt.length - 4, filt.length);
-  renderProducts(".cards", slicepr, "stars");
-  let lmn = products.slice(0, 4);
-  renderProducts(".cards_2", lmn, "rating");
-  let lmn2 = products.slice(products.length - 4, products.length);
-  renderProducts(".cards_3", lmn2, "rating_2");
+  showProducts();
 }
+
+showProducts();

@@ -17,7 +17,7 @@
         <p class="text-[30px]">loading..</p>
       </div>
     </div>
-    <header class="py-[11px] fixed w-[100%] bg-[#FFFFFF] z-1">
+    <header class="py-[11px] fixed w-[100%] bg-[#FFFFFFEE] z-1">
       <div
         class="container mx-[auto] px-[20px] flex items-center justify-between"
       >
@@ -36,7 +36,7 @@
               <button
                 class="pl-[8px] bg-[#70C05B] w-[40px] xl:w-[140px] h-[40px] rounded-[4px] flex items-center gap-[25px]"
               >
-                <img src="./images/header/menu.png" alt="" />
+                <img src="images/header/menu.png" alt="" />
                 <h3
                   class="hidden xl:block xl:text-white xl:text-[16px] xl:font-normal"
                 >
@@ -48,6 +48,7 @@
             <form action="">
               <div class="relative w-[270px] md:w-[325px] xl:w-[360px]">
                 <input
+                  id="input"
                   class="pl-[15px] w-[270px] md:w-[325px] xl:w-[360px] h-[40px] border-[1px] rounded-[4px] border-[#70C05B]"
                   type="text"
                   placeholder="Найти товар"
@@ -57,6 +58,10 @@
                   src="./images/header/search.png"
                   alt=""
                 />
+                <div
+                  id="search-cards"
+                  class="max-h-[400px] overflow-y-scroll top-10 shadow-lg top-[50px] absolute bg-[white] p-[20px] rounded-[10px] flex flex-col gap-[10px]"
+                ></div>
               </div>
             </form>
           </div>
@@ -67,11 +72,17 @@
               <img src="./images/header/like.png" alt="" />
               <p class="text-[12px]">Избранное</p>
             </a>
-            <a href="#" class="flex flex-col items-center gap-[8px]">
+            <a
+              href="./all_products.html"
+              class="flex flex-col items-center gap-[8px]"
+            >
               <img src="./images/header/product.png" alt="" />
               <p class="text-[12px]">продукты</p>
             </a>
-            <a href="#" class="flex flex-col items-center gap-[8px]">
+            <a
+              href="./korzinka.html"
+              class="flex flex-col items-center gap-[8px]"
+            >
               <div class="flex items-center gap-[5px] relative">
                 <img
                   class="w-[25px]"
@@ -87,18 +98,18 @@
               <p class="text-[12px]">Корзина</p>
             </a>
           </div>
-          <a href="#" class="hidden lg:flex lg:items-center lg:gap-[30px]">
-            <div class="lg:flex lg:items-center lg:gap-[18px]">
+          <div class="hidden lg:flex lg:items-center lg:gap-[30px]">
+            <a href="#" class="lg:flex lg:items-center lg:gap-[18px]">
               <img src="./images/header/avatar (3).png" alt="" />
               <p class="hidden lg:block">Алексей</p>
-            </div>
+            </a>
 
             <img
               class="hidden lg:block"
               src="./images/header/chevron-down.png"
               alt=""
             />
-          </a>
+          </div>
           <img class="lg:hidden" src="./images/header/avatar (3).png" alt="" />
         </div>
       </div>
@@ -107,19 +118,22 @@
       <div
         class="container mx-[auto] flex items-center justify-between px-[20px]"
       >
-        <div class="flex flex-col items-center gap-[8px]">
+        <a href="#" class="flex flex-col items-center gap-[8px]">
           <img src="./images/header/catalog.png" alt="" />
           <p class="text-[12px]">Каталог</p>
-        </div>
-        <div class="flex flex-col items-center gap-[8px]">
+        </a>
+        <a href="#" class="flex flex-col items-center gap-[8px]">
           <img src="./images/header/like.png" alt="" />
           <p class="text-[12px]">Избранное</p>
-        </div>
-        <div class="flex flex-col items-center gap-[8px]">
+        </a>
+        <a
+          href="./all_products.html"
+          class="flex flex-col items-center gap-[8px]"
+        >
           <img src="./images/header/product.png" alt="" />
           <p class="text-[12px]">продукты</p>
-        </div>
-        <div class="flex flex-col items-center gap-[8px]">
+        </a>
+        <a href="./korzinka.html" class="flex flex-col items-center gap-[8px]">
           <div class="flex items-center gap-[5px] relative">
             <img
               class="w-[25px]"
@@ -133,7 +147,7 @@
             >
           </div>
           <p class="text-[12px]">Корзина</p>
-        </div>
+        </a>
         <img src="./images/header/avatar (3).png" alt="" />
       </div>
     </div>
@@ -310,5 +324,6 @@
     </footer>
     <script src="../js/products-data.js"></script>
     <script src="../js/all_rpod.js"></script>
+    <script src="./js/search.js"></script>
   </body>
 </html>
