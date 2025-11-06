@@ -20,6 +20,15 @@ function renderAllProducts(products) {
       <div class="hover:shadow-2xl duration-500">
           <div class="p-[20px] max-w-[500px] bg-[#FFFFFF] rounded-[10px] overflow-hidden">
               <div class="relative w-full h-[200px]">
+              ${
+                like.find((item) => item.id === el.id)
+                  ? `
+              <img onClick="removeToLike(${el.id})" id="likeBtn" class="absolute top-[10px] right-[10px] w-[30px] h-[30px] z-10 cursor-pointer shadow-lg" src="./images/like/heart-like.svg" alt="">
+            `
+                  : `
+            <img onClick="addToLike(${el.id})" id="likeBtn" class="absolute top-[10px] right-[10px] w-[30px] h-[30px] z-10 cursor-pointer shadow-lg" src="./images/like/heart.svg" alt="">
+            `
+              }
                   <img class="w-full h-full object-cover" src="${
                     el.images[0]
                   }" alt="">

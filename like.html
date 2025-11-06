@@ -6,7 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-[#FDFBF0] min-h-[100vh]">
+  <body>
     <div
       id="loading"
       class="fixed z-6 top-0 w-full h-full bg-[white] flex items-center justify-center"
@@ -63,9 +63,11 @@
         </div>
         <div class="hidden md:flex md:items-center md:gap-[16px] lg:gap-[60px]">
           <div class="flex items-center gap-[20px] xl:gap-[40px]">
-            <a href="./like.html" class="relative flex flex-col items-center gap-[8px]">
+            <a
+              href="like.html"
+              class="relative flex flex-col items-center gap-[8px]"
+            >
               <span
-          id="likeIconBadge"
                 class="w-[15px] h-[15px] rounded-[50%] bg-[red] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[25%]"
                 >0</span
               >
@@ -122,12 +124,15 @@
           <img src="./images/header/catalog.png" alt="" />
           <p class="text-[12px]">Каталог</p>
         </a>
-        <a href="./like.html" class="relative flex flex-col items-center gap-[8px]">
+        <a
+          href="./like.html"
+          class="relative flex flex-col items-center gap-[8px]"
+        >
           <span
           id="likeIconBadge"
-                class="w-[15px] h-[15px] rounded-[50%] bg-[red] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[25%]"
-                >0</span
-              >
+            class="w-[15px] h-[15px] rounded-[50%] bg-[red] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[25%]"
+            >0</span
+          >
           <img src="./images/header/like.png" alt="" />
           <p class="text-[12px]">Избранное</p>
         </a>
@@ -157,8 +162,8 @@
       </div>
     </div>
 
-    <main>
-      <div class="container mx-auto pb-[26px] sm:pb-[0px] pt-[90px]" >
+    <main class="pt-[80px] pb-[80px]">
+      <div class="container mx-[auto] px-[20px]">
         <div
           class="container max-w-[1440px] py-5 px-4 sm:px-6 md:px-12 mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0"
         >
@@ -174,60 +179,25 @@
               alt=""
             />
             <a
-              href="./korzina.html"
+            id="likeLink"
+              href="./like.html"
               class="hover:text-[orange] duration-500 font-bold text-[18px]"
-              >Корзина</a
+              >Избранное</a
             >
           </div>
         </div>
+
         <div
-          class="container max-w-[1440px] mb-[60px] pt-10 px-4 sm:px-6 md:px-12 mx-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-[40px]"
+          class="flex gap-[50px] flex-col w- lg:flex-row lg:justify-start p-[20px]"
         >
-          <div class="flex gap-[10px]">
-            <input class="w-[22px]" type="checkbox">
-            <p class="text-[18px] cursor-pointer hover:text-[orange] duration-500">Выделить всё</p>
-          </div>
-          <div>
-            <p
-              class="text-[18px] hover:text-[orange] cursor-pointer duration-500"
-            >
-              Удалить выбранные
-            </p>
-          </div>
-        </div>
-        <div class="flex gap-[50px] flex-col w- lg:flex-row lg:justify-start p-[20px]">
-          <div id="korzina" class="mx-auto w-full lg:max-w-[60%] p-0">
-            <!-- Korzina -->
-          </div>
-          <div class="bg-[] w-full lg:max-w-[30%] w-full h-full mx-auto px-[20px] py-[10px] gap-[20px] rounded-[10px] bg-[#FFFFFF] shadow-md">
-            <div class="flex flex-col gap-[10px]">
-              <h2 class="text-[20px] font-bold mb-[20px]">Итого:</h2>
-            <div class="flex items-center justify-between mb-[10px]">
-              <p class="text-[16px]">Товары:</p>
-              <span id="total-items" class="text-[16px] font-bold">0</span>
-            </div>
-            <div class="flex items-center justify-between mb-[10px]">
-              <p class="text-[16px]">Скидка:</p>
-              <span id="total-discount" class="text-[18px]">0$</span>
-              </div>
-              <hr>
-            <div class="flex items-center justify-between mb-[20px]">
-              <h3 class="text-[18px] font-bold">Итого к оплате:</h3>
-              <span id="total-price" class="text-[18px] font-bold">0$</span>
-              </div>
-            <button
-              class="w-full bg-[#70C05B] text-white text-[16px] font-bold py-[10px] rounded-[5px] hover:bg-[#48ee48ff] duration-300"
-            >Оформить заказ</button>
-            </div>
-        </div>
+          <div id="likeContainer" class=" mx-auto w-full lg:max-w-[60%] p-0">
+            <!-- Like -->   
+
       </div>
     </main>
 
-    <!-- Script files -->
-    <script src="../js/products-data.js"></script>
-    <script src="./js/like.js"></script>
+    <script src="./js/products-data.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/korzina.js"></script>
-    <!-- <script src="./js/search.js"></script> -->
+    <script src="./js/like.js"></script>
   </body>
 </html>

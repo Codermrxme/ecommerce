@@ -68,7 +68,15 @@
         </div>
         <div class="hidden md:flex md:items-center md:gap-[16px] lg:gap-[60px]">
           <div class="flex items-center gap-[20px] xl:gap-[40px]">
-            <a href="#" class="flex flex-col items-center gap-[8px]">
+            <a
+              href="./like.html"
+              class="flex flex-col items-center gap-[8px] relative"
+            >
+              <span
+                id="likeIconBadge"
+                class="w-[15px] h-[15px] rounded-[50%] bg-[red] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[25%]"
+                >0</span
+              >
               <img src="./images/header/like.png" alt="" />
               <p class="text-[12px]">Избранное</p>
             </a>
@@ -122,7 +130,15 @@
           <img src="./images/header/catalog.png" alt="" />
           <p class="text-[12px]">Каталог</p>
         </a>
-        <a href="#" class="flex flex-col items-center gap-[8px]">
+        <a
+          href="./like.html"
+          class="relative flex flex-col items-center gap-[8px]"
+        >
+          <span
+            id="likeIconBadge"
+            class="w-[15px] h-[15px] rounded-[50%] bg-[red] text-white text-[10px] font-bold flex items-center justify-center absolute top-[0] right-[25%]"
+            >0</span
+          >
           <img src="./images/header/like.png" alt="" />
           <p class="text-[12px]">Избранное</p>
         </a>
@@ -527,6 +543,7 @@
     </footer>
     <script src="./js/products-data.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/like.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
