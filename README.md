@@ -1,1 +1,1 @@
-[Live Demo)](https://laziz-ecommerce.netlify.app)
+[Live Demo](https://laziz-ecommerce.netlify.app)
